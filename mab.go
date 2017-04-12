@@ -100,6 +100,7 @@ func (r *Reader) readRecord(p []byte) (*Record, error) {
 			if record.Identifier == "" && name == IdentifierTag {
 				record.Identifier = string(v)
 			}
+
 			pp := strings.Split(string(v), "$$")
 
 			switch len(pp) {
