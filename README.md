@@ -11,6 +11,7 @@ $ mabread < fixtures/a.mab | head -1 | jq .
 {
   "leader": "00633nM2.01200024      h",
   "type": "h",
+  "id": "HF0000005",
   "fields": [
     {
       "k": "001",
