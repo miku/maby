@@ -5,6 +5,7 @@ import (
 	"bytes"
 	"fmt"
 	"io"
+	"strconv"
 	"strings"
 )
 
@@ -27,10 +28,16 @@ const (
 
 // Record is a MAB record.
 type Record struct {
-	Leader     string  `json:"leader"`
-	Type       string  `json:"type"`
-	Identifier string  `json:"id"`
-	Fields     []Field `json:"fields"`
+	Leader          string  `json:"leader"`
+	Length          int     `json:"length"`
+	Status          string  `json:"status"`
+	Version         string  `json:"version"`
+	IndicatorLength int     `json:"ilen"`
+	TagLength       int     `json:"tlen"`
+	Offset          int     `json:"offset"`
+	Type            string  `json:"type"`
+	Identifier      string  `json:"id"`
+	Fields          []Field `json:"fields"`
 }
 
 // FieldsByKey returns all fields matching a number of given keys.
@@ -84,9 +91,35 @@ func (r *Reader) readRecord(p []byte) (*Record, error) {
 	if len(p) < LeaderSize {
 		return nil, fmt.Errorf("missing or short header: %d", len(p))
 	}
+
+	// Setup meta fields.
 	record.Leader = string(p[:LeaderSize])
+
+	length, err := strconv.Atoi(record.Leader[0:4])
+	if err != nil {
+		return nil, err
+	}
+	record.Length = length
+	record.Status = string(record.Leader[5])
+	record.Version = string(record.Leader[6:10])
+	ilen, err := strconv.Atoi(string(record.Leader[10]))
+	if err != nil {
+		return nil, err
+	}
+	record.IndicatorLength = ilen
+	tlen, err := strconv.Atoi(string(record.Leader[11]))
+	if err != nil {
+		return nil, err
+	}
+	record.IndicatorLength = tlen
+	offset, err := strconv.Atoi(record.Leader[12:17])
+	if err != nil {
+		return nil, err
+	}
+	record.Offset = offset
 	record.Type = string(record.Leader[LeaderSize-1])
 
+	// Fields.
 	for _, part := range bytes.Split(p[LeaderSize:], []byte{RS}) {
 		if len(part) < FieldnameSize {
 			continue
