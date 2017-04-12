@@ -23,6 +23,5 @@ _testmain.go
 *.test
 *.prof
 
-fixtures/a.mab
-fixtures/v.mab
+fixtures/8*.mab
 /mabread
