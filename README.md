@@ -10,7 +10,7 @@ Jsonify
 $ mabread < fixtures/a.mab | head -1 | jq .
 {
   "leader": "00633nM2.01200024      h",
-  "len": 63,
+  "len": 633,
   "status": "n",
   "version": "M2.0",
   "ilen": 2,
