@@ -36,7 +36,7 @@ func main() {
 ```
 
 ```shell
-$ go run main.go < some.mab
+$ go run cmd/mabread/main.go < fixtures/a.mab
 Die Comédia dell Arte und Deutschland
 Der Schauspieler
 Taschenbuch Elektrotechnik
@@ -67,4 +67,9 @@ func main() {
     }
     log.Printf("%d records", len(records))
 }
+```
+
+```shell
+$ go run cmd/mabread/main.go < fixtures/a.mab
+2017/04/12 16:34:50 122064 records
 ```
