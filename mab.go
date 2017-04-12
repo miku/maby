@@ -136,30 +136,28 @@ func (r *Reader) readRecord(p []byte) (*Record, error) {
 
 			pp := strings.Split(string(v), "$$")
 
-			switch len(pp) {
-			case 1:
+			switch {
+			case len(pp) == 1:
 				record.Fields = append(record.Fields, Field{
 					Key:   name,
 					Value: string(v),
 				})
-			default:
-				if len(pp) > 1 {
-					field := Field{Key: name, Value: pp[0]}
-					for _, sub := range pp[1:] {
-						if len(sub) < 2 {
-							continue
-						}
-						s := struct {
-							Key   string `json:"k"`
-							Value string `json:"v"`
-						}{
-							string(sub[0]),
-							sub[1:],
-						}
-						field.Subfields = append(field.Subfields, s)
+			case len(pp) > 1:
+				field := Field{Key: name, Value: pp[0]}
+				for _, sub := range pp[1:] {
+					if len(sub) < 2 {
+						continue
 					}
-					record.Fields = append(record.Fields, field)
+					s := struct {
+						Key   string `json:"k"`
+						Value string `json:"v"`
+					}{
+						string(sub[0]),
+						sub[1:],
+					}
+					field.Subfields = append(field.Subfields, s)
 				}
+				record.Fields = append(record.Fields, field)
 			}
 		}
 	}
