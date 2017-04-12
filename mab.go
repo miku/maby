@@ -62,8 +62,8 @@ type Field struct {
 
 // Reader reads MAB records.
 type Reader struct {
-	r              *bufio.Reader
 	StripCollation bool
+	r              *bufio.Reader
 	readerDone     bool
 }
 
@@ -115,4 +115,18 @@ func (r *Reader) ReadRecord() (*Record, error) {
 		return nil, err
 	}
 	return r.readRecord(b)
+}
+
+// ReadRecords returns all records at once.
+func (r *Reader) ReadRecords() (records []*Record, err error) {
+	for {
+		rec, err := r.ReadRecord()
+		if err == io.EOF {
+			return records, nil
+		}
+		if err != nil {
+			return records, err
+		}
+		records = append(records, rec)
+	}
 }

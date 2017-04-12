@@ -3,6 +3,9 @@ maby
 
 [MAB](http://www.dnb.de/DE/Standardisierung/Formate/MAB/mab_node.html) library for Go.
 
+Show titles
+-----------
+
 ```go
 package main
 
@@ -17,7 +20,6 @@ import (
 
 func main() {
     r := maby.NewReader(os.Stdin)
-    r.StripCollation = true
     for {
         rec, err := r.ReadRecord()
         if err == io.EOF {
@@ -42,4 +44,27 @@ Systeme der Elektroenergietechnik
 Bauelemente und Bausteine der Informationstechnik
 Bauelemente und Bausteine der Informationstechnik
 Grundlagen der Informationstechnik
+```
+
+Count record
+------------
+
+```go
+package main
+
+import (
+    "log"
+    "os"
+
+    "github.com/miku/maby"
+)
+
+func main() {
+    r := maby.NewReader(os.Stdin)
+    records, err := r.ReadRecords()
+    if err != nil {
+        log.Fatal(err)
+    }
+    log.Printf("%d records", len(records))
+}
 ```
