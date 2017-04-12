@@ -29,7 +29,7 @@ const (
 // Record is a MAB record.
 type Record struct {
 	Leader          string  `json:"leader"`
-	Length          int     `json:"length"`
+	Length          int     `json:"len"`
 	Status          string  `json:"status"`
 	Version         string  `json:"version"`
 	IndicatorLength int     `json:"ilen"`
