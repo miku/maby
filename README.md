@@ -10,6 +10,12 @@ Jsonify
 $ mabread < fixtures/a.mab | head -1 | jq .
 {
   "leader": "00633nM2.01200024      h",
+  "len": 63,
+  "status": "n",
+  "version": "M2.0",
+  "ilen": 2,
+  "tlen": 0,
+  "offset": 24,
   "type": "h",
   "id": "HF0000005",
   "fields": [
@@ -43,7 +49,17 @@ $ mabread < fixtures/a.mab | head -1 | jq .
     },
     {
       "k": "100b",
-      "v": "Brauneck, Manfred$$9HF0000002$$b[Hrsg.]"
+      "v": "Brauneck, Manfred",
+      "s": [
+        {
+          "k": "9",
+          "v": "HF0000002"
+        },
+        {
+          "k": "b",
+          "v": "[Hrsg.]"
+        }
+      ]
     },
     {
       "k": "331",
@@ -107,15 +123,37 @@ $ mabread < fixtures/a.mab | head -1 | jq .
     },
     {
       "k": "710",
-      "v": "Theaterwissenschaft/M$$9HF0000122"
+      "v": "Theaterwissenschaft/M",
+      "s": [
+        {
+          "k": "9",
+          "v": "HF0000122"
+        }
+      ]
     },
     {
       "k": "710",
-      "v": "Lexika/U$$9HF0000110"
+      "v": "Lexika/U",
+      "s": [
+        {
+          "k": "9",
+          "v": "HF0000110"
+        }
+      ]
     },
     {
       "k": "104b",
-      "v": "Schneiling, Gerard$$9HF0000003$$b[Hrsg.]"
+      "v": "Schneiling, Gerard",
+      "s": [
+        {
+          "k": "9",
+          "v": "HF0000003"
+        },
+        {
+          "k": "b",
+          "v": "[Hrsg.]"
+        }
+      ]
     }
   ]
 }
