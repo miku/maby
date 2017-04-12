@@ -10,20 +10,12 @@ import (
 )
 
 const (
-	// GS is the group separator.
-	GS = 0x1D
-	// RS is the record separator.
-	RS = 0x1E
-	// US is the unit separator.
-	US = 0x1F
-	// LeaderSize is the length of the header.
-	LeaderSize = 24
-	// FieldnameSize is the length of a field name.
+	GS            = 0x1D
+	RS            = 0x1E
+	US            = 0x1F
+	LeaderSize    = 24
 	FieldnameSize = 4
-	// IdentifierTag is the name of the identifier field.
 	IdentifierTag = "001"
-	// TagLength is the length of a tag.
-	TagLength = 4
 )
 
 // Record is a MAB record.
