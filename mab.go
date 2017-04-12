@@ -26,9 +26,10 @@ const (
 
 // Record is a MAB record.
 type Record struct {
-	Leader string  `json:"leader"`
-	Type   string  `json:"type"`
-	Fields []Field `json:"fields"`
+	Leader     string  `json:"leader"`
+	Type       string  `json:"type"`
+	Identifier string  `json:"id"`
+	Fields     []Field `json:"fields"`
 }
 
 // FieldsByKey returns all fields matching a number of given keys.
@@ -85,13 +86,16 @@ func (r *Reader) readRecord(p []byte) (*Record, error) {
 		if len(part) < FieldnameSize {
 			continue
 		}
-		name := bytes.TrimSpace(part[0:FieldnameSize])
+		name := string(bytes.TrimSpace(part[0:FieldnameSize]))
 		for _, v := range bytes.Split(part[FieldnameSize:], []byte{US}) {
 			if r.StripCollation {
 				v = bytes.Replace(v, []byte{0x88}, []byte{}, -1)
 				v = bytes.Replace(v, []byte{0x89}, []byte{}, -1)
 			}
-			field := Field{Key: string(name), Value: string(v)}
+			field := Field{Key: name, Value: string(v)}
+			if name == IdentifierTag {
+				record.Identifier = string(v)
+			}
 			record.Fields = append(record.Fields, field)
 		}
 	}
