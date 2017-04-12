@@ -97,12 +97,12 @@ func (r *Reader) readRecord(p []byte) (record *Record, err error) {
 
 	// Setup meta fields.
 	record.Leader = string(p[:LeaderSize])
-
+	record.Status = string(record.Leader[5])
+	record.Version = record.Leader[6:10]
+	record.Type = string(record.Leader[23])
 	if record.Length, err = strconv.Atoi(record.Leader[0:5]); err != nil {
 		return nil, err
 	}
-	record.Status = string(record.Leader[5])
-	record.Version = record.Leader[6:10]
 	if record.IndicatorLength, err = strconv.Atoi(string(record.Leader[10])); err != nil {
 		return nil, err
 	}
@@ -112,7 +112,6 @@ func (r *Reader) readRecord(p []byte) (record *Record, err error) {
 	if record.Offset, err = strconv.Atoi(record.Leader[12:17]); err != nil {
 		return nil, err
 	}
-	record.Type = string(record.Leader[LeaderSize-1])
 
 	// Fields.
 	for _, part := range bytes.Split(p[LeaderSize:], []byte{RS}) {
