@@ -20,25 +20,25 @@ const (
 
 // Record is a MAB record.
 type Record struct {
-	Leader          string  `json:"leader"`
-	Length          int     `json:"len"`
-	Status          string  `json:"status"`
-	Version         string  `json:"version"`
-	IndicatorLength int     `json:"ilen"`
-	TagLength       int     `json:"tlen"`
-	Offset          int     `json:"offset"`
-	Type            string  `json:"type"`
-	Identifier      string  `json:"id"`
-	Fields          []Field `json:"fields"`
+	Leader          string  `json:"leader,omitempty"`
+	Length          int     `json:"len,omitempty"`
+	Status          string  `json:"status,omitempty"`
+	Version         string  `json:"version,omitempty"`
+	IndicatorLength int     `json:"ilen,omitempty"`
+	TagLength       int     `json:"tlen,omitempty"`
+	Offset          int     `json:"offset,omitempty"`
+	Type            string  `json:"type,omitempty"`
+	Identifier      string  `json:"id,omitempty"`
+	Fields          []Field `json:"fields,omitempty"`
 }
 
 // Field is a single field.
 type Field struct {
-	Key       string `json:"k"`
-	Value     string `json:"v"`
+	Key       string `json:"k,omitempty"`
+	Value     string `json:"v,omitempty"`
 	Subfields []struct {
-		Key   string `json:"k"`
-		Value string `json:"v"`
+		Key   string `json:"k,omitempty"`
+		Value string `json:"v,omitempty"`
 	} `json:"s,omitempty"`
 }
 
