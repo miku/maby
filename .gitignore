@@ -24,4 +24,5 @@ _testmain.go
 *.prof
 
 fixtures/8*.mab
+fixtures/8*.ldj
 /mabread
