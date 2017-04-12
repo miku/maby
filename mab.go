@@ -95,7 +95,7 @@ func (r *Reader) readRecord(p []byte) (*Record, error) {
 	// Setup meta fields.
 	record.Leader = string(p[:LeaderSize])
 
-	length, err := strconv.Atoi(record.Leader[0:4])
+	length, err := strconv.Atoi(record.Leader[0:5])
 	if err != nil {
 		return nil, err
 	}
