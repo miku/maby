@@ -11,10 +11,20 @@ import (
 	"github.com/miku/maby"
 )
 
-var stripCollection = flag.Bool("strip", false, "strip collation bytes (88, 89)")
+// Version of application.
+const Version = "0.1.0"
+
+var (
+	stripCollection = flag.Bool("strip", false, "strip collation bytes (88, 89)")
+	version         = flag.Bool("version", false, "show version")
+)
 
 func main() {
 	flag.Parse()
+	if *version {
+		fmt.Println(Version)
+		os.Exit(0)
+	}
 	r := maby.NewReader(os.Stdin)
 	r.StripCollation = *stripCollection
 	for {
