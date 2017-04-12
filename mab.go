@@ -5,6 +5,7 @@ import (
 	"bytes"
 	"fmt"
 	"io"
+	"strings"
 )
 
 const (
@@ -57,8 +58,12 @@ func (r *Record) FieldByKey(key string) (field Field, found bool) {
 
 // Field is a single field.
 type Field struct {
-	Key   string `json:"k"`
-	Value string `json:"v"`
+	Key       string `json:"k"`
+	Value     string `json:"v"`
+	Subfields []struct {
+		Key   string `json:"k"`
+		Value string `json:"v"`
+	} `json:"s,omitempty"`
 }
 
 // Reader reads MAB records.
@@ -92,11 +97,36 @@ func (r *Reader) readRecord(p []byte) (*Record, error) {
 				v = bytes.Replace(v, []byte{0x88}, []byte{}, -1)
 				v = bytes.Replace(v, []byte{0x89}, []byte{}, -1)
 			}
-			field := Field{Key: name, Value: string(v)}
-			if name == IdentifierTag {
+			if record.Identifier == "" && name == IdentifierTag {
 				record.Identifier = string(v)
 			}
-			record.Fields = append(record.Fields, field)
+			pp := strings.Split(string(v), "$$")
+
+			switch len(pp) {
+			case 1:
+				record.Fields = append(record.Fields, Field{
+					Key:   name,
+					Value: string(v),
+				})
+			default:
+				if len(pp) > 1 {
+					field := Field{Key: name, Value: pp[0]}
+					for _, sub := range pp[1:] {
+						if len(sub) < 2 {
+							continue
+						}
+						s := struct {
+							Key   string `json:"k"`
+							Value string `json:"v"`
+						}{
+							string(sub[0]),
+							sub[1:],
+						}
+						field.Subfields = append(field.Subfields, s)
+					}
+					record.Fields = append(record.Fields, field)
+				}
+			}
 		}
 	}
 	return &record, nil
