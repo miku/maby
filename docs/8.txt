@@ -1,0 +1,762 @@
+                                  MAB2
+                       Online-Kurzreferenz-Version
+        Uebersicht der Formaterweiterungen und Formataenderungen
+
+                           Stand: Juni 2006
+
+
+                       ============================
+                       Satzkennung und Segmente 0--
+                       ============================
+
+
+026       REGIONALE IDENTIFIKATIONSNUMMER
+
+          Indikator:
+          i     = Oesterreichischer Bibliothekenverbund
+
+
+040       NOTATION FUER NORMDATEN
+
+          Indikator:
+          blank = nicht spezifiziert
+              a = Systematiknummer Der Deutschen Bibliothek
+              b = DDC (Dewey Decimal Classification)
+
+          Wiederholungsfaktor = 3 / fakultativ / in den Satztypen p, k, s
+
+
+041       NOTATIONSSPEZIFISCHE CODIERUNGEN
+
+          Datenelemente:
+            0   Art der Notation
+                f     = BK      (Basisklassifikation)
+                j     = NDC     (Nippon Decimal Classification)
+                k     = NDLC    (National Diet Library Classification)
+
+
+051       VEROEFFENTLICHUNGSSPEZIFISCHE ANGABEN ZU BEGRENZTEN WERKEN
+
+          Datenelemente:
+            0  Erscheinungsform
+               h = Finite Integrating Resource
+
+          1-3  Veroeffentlichungsart und Inhalt
+               w = Website
+               y = Dissertation
+
+            7  Angaben der Freiwilligen Selbstkontrolle der Filmwirtschaft (FSK)
+               0 = Freigegeben ohne Altersbeschraenkung
+               1 = Freigegeben ab 6 Jahren
+               2 = Freigegeben ab 12 Jahren
+               3 = Freigegeben ab 16 Jahren
+               4 = Nicht freigegeben unter 18 Jahren
+
+
+052       VEROEFFENTLICHUNGSSPEZIFISCHE ANGABEN ZU FORTLAUFENDEN SAMMELWERKEN
+
+          Datenelemente:
+            0  Erscheinungsform
+               i = Continuing Integrating Resource
+
+          1-6  Veroeffentlichungsart und Inhalt
+               ws = Website
+
+         8-10  Erscheinungsweise
+               k = laufend
+
+
+053       NACHLAESSE UND AUTOGRAPHEN
+
+          Datenelemente:
+            0  Nachlassmaterialien
+               m = Musikquelle
+
+            1  Authentizitaetsgrad
+               a = Autograph
+               b = Fragliches Autograph
+               c = Teilautograph
+               d = Abschrift
+               e = Druckausgabe (mit handschriftlichen Ergaenzungen und dgl.)
+
+
+058       MATERIALSPEZIFISCHE CODES FUER ELEKTRONISCHE RESSOURCEN
+
+          Datenelemente:
+            0  Materialart
+               c = Elektronische Ressource
+
+            1  Spezifische Materialbenennung
+               a = Magnetbandkartusche
+               b = Einsteckmodul
+               c = optische Diskette
+               f = Magnetbandkassette
+               h = Magnetbandspule
+               j = Diskette
+               m = magneto-optischer Datentraeger (wiederbeschreibbar)
+               o = optischer Datentraeger (nur lesbar, z. B. CD-ROM, DVD)
+               r = Online-Ressource
+               u = nicht spezifiziert
+               z = andere
+
+            2  nicht besetzt
+
+            3  Farbe
+               a = einfarbig
+               b = schwarzweiss
+               c = mehrfarbig
+               g = Graustufen
+               m = gemischt (mehr als eine Farbart)
+               n = nicht anzuwenden
+               u = unbekannt
+               z = andere
+
+            4  Abmessungen
+               a = 3 1/2 Zoll
+               e = 12 Zoll
+               g = 4 3/4 Zoll oder 12 cm
+               i = 1 1/8 x 2 3/8 Zoll
+               j = 3 7/8 x 2 1/2 Zoll
+               n = nicht anzuwenden
+               o = 5 1/4 Zoll
+               u = unbekannt
+               v = 8 Zoll
+               z = andere
+
+            5  Ton
+               Blank = ohne Ton
+               a = mit Ton
+               u = unbekannt
+
+          6-8  Bit-Tiefe der Bilddatei
+               001 - 999 = exakte Bit-Tiefe (z. B. 001)
+               mmm = gemischt (mehr als eine Bilddatei)
+               nnn = nicht anzuwenden
+               --- = unbekannt
+
+            9  Anzahl der Dateiformate
+               a = ein Dateiformat
+               m = mehrere Dateiformate
+               u = unbekannt
+
+           10  Messskalen zur Qualitaetssicherung
+               a = nicht vorhanden
+               n = nicht anzuwenden
+               p = vorhanden
+               u = unbekannt
+
+           11  Vorgaengermedium/Quelle
+               a = Datei wurde vom Original aufgenommen
+               b = Datei wurde von einer Mikroform aufgenommen
+               c = Datei wurde von einer Computer-Datei aufgenommen
+               d = Datei wurde von einer anderen Vorlage als Mikroform aufgenommen
+               m = gemischte Vorlagen
+               n = nicht anzuwenden
+               u = unbekannt
+
+           12  Grad der Komprimierung
+               a = nicht komprimiert
+               b = verlustfrei komprimiert
+               d = mit Verlust komprimiert
+               m = gemischt (mehr als eine Komprimierungsart)
+               u = unbekannt
+
+           13  Qualitaet der Konversion
+               a = Zugang fuer Nutzer
+               n = nicht anzuwenden
+               p = Bestandserhaltung
+               r = Ersatz des Originals
+               u = unbekannt
+
+
+071       IDENTIFIZIERUNGSMERKMALE DER BESITZENDEN INSTITUTION
+
+          Indikator:
+              d = Internationales Bibliothekssigel (ISIL)
+
+
+072       CODIERTE ANGABEN ZUR BESITZENDEN INSTITUTION
+
+          Datenelemente:
+            6  Fernleihindikator
+               a = Fernleihe (Nur Ausleihe)
+               k = Fernleihe (Nur Kopie)
+               l = Fernleihe (Kopie und Ausleihe)
+               n = Keine Fernleihe
+
+
+073       SONDERSAMMELGEBIETSNUMMER
+
+          Indikator:
+          blank = nicht definiert
+
+          Wiederholungsfaktor = 5 / fakultativ / in den Satztypen h, y, u, l, e
+
+
+
+                               =========
+                               MAB-TITEL
+                               =========
+
+
+304       EINHEITSSACHTITEL
+
+          nicht wiederholbar / fakultativ / in den Satztypen h, u
+
+
+305       IDENTIFIKATIONSNUMMER DES EINHEITSSACHTITELSATZES
+
+          Indikator:
+          blank = nicht spezifiziert
+              a = Ueberregionale Identifikationsnummer
+              b = Regionale Identifikationsnummer
+              c = Lokale Identifikationsnummer
+
+          nicht wiederholbar / fakultativ / in den Satztypen h, u
+
+
+370       WEITERE SACHTITEL
+
+          Wiederholungsfaktor = 50 / fakultativ / in den Satztypen h, u
+
+
+542       INTERNATIONALE STANDARDNUMMER FUER FORTLAUFENDE
+          SAMMELWERKE (ISSN)
+
+          Wiederholungsfaktor = 50 / fakultativ / in den Satztypen h, u
+
+
+544       LOKALE SIGNATUR
+
+          Indikator:
+          b     = Fruehere Signatur
+
+
+545       WEITERE INTERNATIONALE STANDARDNUMMER FUER FORTLAUFENDE
+          SAMMELWERKE (ISSN)
+
+          wiederholbar / fakultativ / in den Satztypen h, u
+
+          Indikator:
+          blank = ISSN formal nicht geprueft
+          a     = ISSN formal richtig
+          b     = ISSN formal falsch
+
+          Unterfelder:
+          $a    = Autorisierte ISSN                    (NW)
+          $b    = ISSN der Ausgabe auf Datentraeger    (NW)
+          $c    = ISSN der Internetausgabe             (NW)
+          $d    = ISSN der Druckausgabe                (NW)
+
+
+550       AMTLICHE DRUCKSCHRIFTENNUMMER
+
+          Indikator:
+          blank = nicht definiert
+          Wiederholungsfaktor = 50
+
+
+551       VERLAGS-, PRODUKTIONS- UND BESTELLNUMMER
+
+          Indikator:
+          blank = nicht spezifiziert
+          a     = Verlags- und Firmenbestellnummer
+          b     = Druckplattennummer bei Musikalien
+          c     = Plattennummer
+          d     = Setnummer
+          e     = Produktionsnummer
+          f     = Kompaktkassettennummer
+
+
+552       PERSISTENT IDENTIFIERS (PI)
+
+          Indikator:
+          blank = nicht spezifiziert
+              a = Digital Object Identifier (DOI)
+              b = Uniform Resource Name (URN)
+              c = Handle
+
+
+655       ELEKTRONISCHE ADRESSE UND ZUGRIFFSART FUER EINE COMPUTERDATEI IM
+          FERNZUGRIFF
+
+          Unterfelder:
+          $g    = URN (Uniform Resource Name)
+                  GESTRICHEN; SIEHE FELD 552, INDIKATOR b
+          $y    = Link-Text
+
+
+671       ANDERSSCHRIFTLICHE DARSTELLUNG
+
+          Indikator:
+          blank = nicht definiert
+
+          wiederholbar / fakultativ / in allen Satztypen
+
+          Unterfelder:
+          siehe die Bestimmungen fuer die Unterfelder des verknuepften Feldes,
+          falls vorhanden
+
+          Fester Vorspann:
+          0-2  Feldnummer des verknuepften Feldes
+            3  Indikator des verknuepften Feldes
+          4-5  Nummer des Feldes bei Feldwiederholung (Occurence)
+          6-9  Code fuer die verwendete Schrift, nach ISO 15924
+           10  Code fuer die Orientierung des Feldes ("l" oder "r")
+        11-14  Code fuer die Schrift des verknuepften Feldes, nach ISO 15924
+           15  Code fuer die Orientierung des verknuepften Feldes ("l" oder "r")
+
+          Inhalt des verknuepften Feldes in einer anderen Schrift
+
+
+680-689   SEGMENT ANGABEN ZU MUSIKMATERIALIEN
+
+680       WERKVERZEICHNIS
+
+          Indikator:
+          blank = nicht definiert
+
+          wiederholbar / fakultativ / in den Satztypen h, u
+
+          Unterfelder:
+          $a    = Angabe des Werkverzeichnisses
+          $b    = Fundstelle (Werkverzeichnis-Nummer)
+
+
+681       ANGABEN ZUM MUSIKWERK
+
+          Indikator:
+          blank = nicht definiert
+
+          wiederholbar / fakultativ / in den Satztypen h, u
+
+          Unterfelder:
+          $a    = Opus-Zahl
+          $b    = Tonart des Werkes
+          $c    = Pauschale Besetzungsangabe
+
+
+682       ANGABEN ZUM MUSIKINCIPIT
+
+          Indikator:
+          blank = nicht definiert
+
+          wiederholbar / fakultativ / in den Satztypen h, u
+
+          Unterfelder:
+          $a    = Incipitnummer
+          $b    = Besetzung des Incipit
+          $c    = Rollenangabe zum Incipit
+          $d    = Satztitel und Tempoangabe im Incipit
+          $e    = Besetzung Satz
+          $f    = Text im Incipit
+          $g    = Lateinische Texte
+          $h    = Taktangabe
+          $i    = Zaehltakt
+          $j    = Schluessel
+          $k    = Tonart des Incipits
+          $l    = Angabe des Musikincipits in codierter Form
+                 (Plaine and Easy-Code)
+          $m    = Kommentar zum Incipit
+
+
+683       ANGABEN ZUR BESETZUNG
+
+          Indikator:
+          blank = nicht definiert
+
+          nicht wiederholbar / fakultativ / in den Satztypen h, u
+
+          Unterfelder:
+          $a    = Solostimmen
+          $b    = Chorstimmen
+          $c    = Soloinstrumente
+          $d    = Orchesterinstrumente
+          $e    = Kommentar zur Besetzung
+          $f    = Gesamtanzahl Besetzung
+
+
+700       NOTATION EINES KLASSIFIKATIONSSYSTEMS
+
+          Indikator:
+          f     = BK      (Basisklassifikation)
+          j     = NDC     (Nippon Decimal Classification)
+          k     = NDLC    (National Diet Library Classification)
+
+
+705       DDC (DEWEY DECIMAL CLASSIFICATION) ANALYTISCH
+
+          Indikator:
+          blank = nicht spezifiziert
+              a = Standardausgabe
+              b = Kurzausgabe
+
+          wiederholbar / fakultativ / in den Satztypen h, y, u, l, e
+
+          Unterfelder:
+          $a    = Vollstaendige Notation
+          $b    = Exemplarnummer (Item number)
+          $c    = Grundnotation
+          $d    = Notationen anderer Haupttafeln
+          $e    = Angabe der zugrunde liegenden DDC-Ausgabe
+          $f    = Notation aus Hilfstafel 1
+          $g    = Notation aus Hilfstafel 2
+          $h    = Notation aus Hilfstafel 3A
+          $i    = Notation aus Hilfstafel 3B
+          $j    = Notation aus Hilfstafel 3C
+          $k    = Notation aus Hilfstafel 4
+          $l    = Notation aus Hilfstafel 5
+          $m    = Notation aus Hilfstafel 6
+          $t    = Notation aus einer Anhaengetafel
+          $A    = Quelle der vergebenen Notation
+                  0 = Notation von der Library of Congress vergeben
+                  1 = Notation von Der Deutschen Bibliothek vergeben
+                  4 = Notation von anderer Institution vergeben
+
+
+
+                               =======
+                               MAB-PND
+                               =======
+
+
+655       ELEKTRONISCHE ADRESSE UND ZUGRIFFSART FUER EINE COMPUTERDATEI IM
+          FERNZUGRIFF
+          siehe MAB-TITEL
+
+
+670-675   SEGMENT ZUSAETZLICHE SUCHKRITERIEN
+
+671       ANDERSSCHRIFTLICHE DARSTELLUNG
+          siehe MAB-TITEL
+
+
+814       DATEN ZUR PERSON
+
+          Wiederholungsfaktor = 50 / fakultativ
+
+          Indikator:
+          n     = Ungefaehre Zeitangaben
+
+
+815       DATEN ZUR PERSON IN NORMIERTER FORM
+
+          Wiederholungsfaktor = 50 / fakultativ
+
+          Indikator:
+          i     = Beruf und/oder Funktion
+                  UMBENANNT IN
+          i     = Weite, individualisierende Berufsbezeichnung
+          o     = Spezifische Berufs- bzw. Funktionsbezeichnung aus der SWD
+
+          Feldstruktur:
+
+          Das Feld wird von einer 20 Zeichen umfassenden festen Zeichenfolge
+          eingeleitet, wenn die Identifikationsnummer eines verknuepften
+          Normdatensatzes angegeben wird. Das Feld wird vom Fuellzeichen "|"
+          eingeleitet, wenn keine Verknuepfungsnummer uebermittelt wird. Bei
+          Verwendung des Indikators "v" fuer "Bemerkungen" beginnt das Feld
+          immer mit einem Fuellzeichen "|".
+
+          Die Verknuepfung bei Verwendung der Indikatoren "c", "d", "e", "i"
+          und "o" erfolgt immer hin zur SWD (also mittels einer SWD-Nummer);
+          bei Verwendung des Indikators "m" erfolgt die Verknuepfung immer
+          hin zur PND (also mittels einer PND-Nummer).
+
+
+820       ANSETZUNGSFORM NACH EINEM WEITEREN REGELWERK
+
+          Indikator:
+          n = Ansetzungsform nach der Polnischen Nationalbibliographie
+
+
+
+                               =======
+                               MAB-GKD
+                               =======
+
+
+655       ELEKTRONISCHE ADRESSE UND ZUGRIFFSART FUER EINE COMPUTERDATEI IM
+          FERNZUGRIFF
+          siehe MAB-TITEL
+
+
+670-675   SEGMENT ZUSAETZLICHE SUCHKRITERIEN
+
+671       ANDERSSCHRIFTLICHE DARSTELLUNG
+          siehe MAB-TITEL
+
+
+802       OFFIZIELLER NAME DER KOERPERSCHAFT
+
+          Indikator:
+          blank = Offizieller Name der Koerperschaft
+              a = Bemerkungen zum offiziellen Namen der Koerperschaft
+
+          wiederholbar / fakultativ
+
+
+897       WEITERE VERWEISUNGSFORMEN
+
+          Indikator:
+          blank = nicht definiert
+
+          wiederholbar / fakultativ
+
+
+
+                               =======
+                               MAB-SWD
+                               =======
+
+
+605       NICHT-DESKRIPTOR
+
+          Indikator:
+          p     = Personenschlagwort bzw. Schlagwortansetzung mit
+                  Personenschlagwort als Hauptschlagwort
+          k     = Koerperschaftsschlagwort bzw. Schlagwortansetzung mit
+                  Koerperschaftsschlagwort als Hauptschlagwort
+                  (fuer Koerperschaften, die unter ihrem Individualnamen
+                  angesetzt werden)
+          c     = Koerperschaftsschlagwort bzw. Schlagwortansetzung mit
+                  Koerperschaftsschlagwort als Hauptschlagwort
+                 (fuer Koerperschaften, die unter einem Geographikum angesetzt
+                  werden)
+          g     = geographisches/ethnographisches Schlagwort, Schlagwort fuer
+                  Sprachbezeichnungen bzw. Schlagwortansetzung mit Geographikum
+                  als Hauptschlagwort
+          t     = Sachtitel eines Werkes
+          s     = Sachschlagwort
+          f     = Formschlagwort
+          z     = Zeitschlagwort
+          blank = nicht spezifiziert
+
+          nicht wiederholbar / fakultativ
+
+
+606       ZU VERKNUEPFENDE DESKRIPTOREN
+
+          Indikator:
+          p     = Personenschlagwort bzw. Schlagwortansetzung mit
+                  Personenschlagwort als Hauptschlagwort
+          k     = Koerperschaftsschlagwort bzw. Schlagwortansetzung mit
+                  Koerperschaftsschlagwort als Hauptschlagwort
+                  (fuer Koerperschaften, die unter ihrem Individualnamen
+                  angesetzt werden)
+          c     = Koerperschaftsschlagwort bzw. Schlagwortansetzung mit
+                  Koerperschaftsschlagwort als Hauptschlagwort
+                 (fuer Koerperschaften, die unter einem Geographikum angesetzt
+                  werden)
+          g     = geographisches/ethnographisches Schlagwort, Schlagwort fuer
+                  Sprachbezeichnungen bzw. Schlagwortansetzung mit Geographikum
+                  als Hauptschlagwort
+          t     = Sachtitel eines Werkes
+          s     = Sachschlagwort
+          f     = Formschlagwort
+          z     = Zeitschlagwort
+          blank = nicht spezifiziert
+
+          wiederholbar / fakultativ
+
+
+655       ELEKTRONISCHE ADRESSE UND ZUGRIFFSART FUER EINE COMPUTERDATEI IM
+          FERNZUGRIFF
+          siehe MAB-TITEL
+
+
+670-675   SEGMENT ZUSAETZLICHE SUCHKRITERIEN
+
+671       ANDERSSCHRIFTLICHE DARSTELLUNG
+          siehe MAB-TITEL
+
+
+
+                               =========
+                               MAB-NOTAT
+                               =========
+
+
+670-675   SEGMENT ZUSAETZLICHE SUCHKRITERIEN
+
+671       ANDERSSCHRIFTLICHE DARSTELLUNG
+          siehe MAB-TITEL
+
+
+
+                               =========
+                               MAB-LOKAL
+                               =========
+
+
+130       BIBLIOGRAPHISCHE ANGABEN
+
+          Wiederholungsfaktor = 50 / fakultativ / in den Satztypen l, e
+
+
+220       1. SIGNATUR
+
+          Indikator:
+          blank = nicht definiert
+
+          nicht wiederholbar / fakultativ / im Satztyp l
+
+          Unterfelder:
+          $a    = Magazin-/Grundsignatur
+          $c    = Kommentar, insbesondere zu dem Aufbewahrungs-/
+                  Verfuegbarkeitszeitraum
+          $d    = Ausleihindikator
+          $f    = aktueller Standort
+          $g    = Signatur am aktuellen Standort
+          $l    = Fernleihindikator
+
+221       2. SIGNATUR
+          Indikator, Vorkommen und Unterfelder wie Feld 220
+
+222       3. SIGNATUR
+          Indikator, Vorkommen und Unterfelder wie Feld 220
+
+223       4. SIGNATUR
+          Indikator, Vorkommen und Unterfelder wie Feld 220
+
+224       5. SIGNATUR
+          Indikator, Vorkommen und Unterfelder wie Feld 220
+
+225       6. SIGNATUR
+          Indikator, Vorkommen und Unterfelder wie Feld 220
+
+226       7. SIGNATUR
+          Indikator, Vorkommen und Unterfelder wie Feld 220
+
+227       8. SIGNATUR
+          Indikator, Vorkommen und Unterfelder wie Feld 220
+
+228       9. SIGNATUR
+          Indikator, Vorkommen und Unterfelder wie Feld 220
+
+229       10. SIGNATUR
+          Indikator, Vorkommen und Unterfelder wie Feld 220
+
+
+230       AUFBEWAHRUNGS-/ VERFUEGBARKEITSZEITRAUM, MOVING WALL
+          ZUR 1. SIGNATUR
+
+          Indikator:
+          blank = nicht spezifiziert
+              a = abgeschlossener Bestand
+              b = laufender Bestand
+              c = abgeschlossener Bestand mit Aufbewahrungs-/
+                  Verfuegbarkeitszeitraum, Moving wall
+              d = laufender Bestand mit Moving wall
+
+          nicht wiederholbar / fakultativ / im Satztyp l
+
+          Unterfelder:
+
+          Beginngruppe
+          $d    = Bandzaehlung
+          $e    = Heft
+          $b    = Tag
+          $c    = Monat
+          $j    = Berichtsjahr bzw. Erscheinungsjahr
+          $h    = Abweichendes Erscheinungsjahr
+
+          Endegruppe
+          $n    = Bandzaehlung
+          $o    = Heft
+          $l    = Tag
+          $m    = Monat
+          $k    = Berichtsjahr bzw. Erscheinungsjahr
+          $i    = Abweichendes Erscheinungsjahr
+
+          Aufbewahrungs-/ Verfuegbarkeitszeitraum, Moving wall
+          $7    = Aufbewahrungs-/ Verfuegbarkeitszeitraum,
+                  Moving wall
+
+          Inhalt von $7:
+          +nY   = nur die n neuesten Jahrgaenge sind zugaenglich
+          -nY   = die n neuesten Jahrgaenge sind nicht zugaenglich
+          +nV   = nur die n neuesten Baende sind zugaenglich
+          -nV   = die n neuesten Baende sind nicht zugaenglich
+          +nM   = nur die Ausgaben der letzten n Monate sind zugaenglich
+          -nM   = die Ausgaben der letzten n Monate sind nicht zugaenglich
+          +nD   = nur die n neuesten Tage sind zugaenglich
+          -nD   = die n neuesten Tage sind nicht zugaenglich
+          +nI   = nur die Ausgaben der letzten n Hefte sind zugaenglich
+          -nI   = die Ausgaben der letzten n Hefte sind nicht zugaenglich
+
+231       AUFBEWAHRUNGS-/ VERFUEGBARKEITSZEITRAUM, MOVING WALL
+          ZUR 2. SIGNATUR
+          Indikator, Vorkommen und Unterfelder wie Feld 230
+
+232       AUFBEWAHRUNGS-/ VERFUEGBARKEITSZEITRAUM, MOVING WALL
+          ZUR 3. SIGNATUR
+          Indikator, Vorkommen und Unterfelder wie Feld 230
+
+233       AUFBEWAHRUNGS-/ VERFUEGBARKEITSZEITRAUM, MOVING WALL
+          ZUR 4. SIGNATUR
+          Indikator, Vorkommen und Unterfelder wie Feld 230
+
+234       AUFBEWAHRUNGS-/ VERFUEGBARKEITSZEITRAUM, MOVING WALL
+          ZUR 5. SIGNATUR
+          Indikator, Vorkommen und Unterfelder wie Feld 230
+
+235       AUFBEWAHRUNGS-/ VERFUEGBARKEITSZEITRAUM, MOVING WALL
+          ZUR 6. SIGNATUR
+          Indikator, Vorkommen und Unterfelder wie Feld 230
+
+236       AUFBEWAHRUNGS-/ VERFUEGBARKEITSZEITRAUM, MOVING WALL
+          ZUR 7. SIGNATUR
+          Indikator, Vorkommen und Unterfelder wie Feld 230
+
+237       AUFBEWAHRUNGS-/ VERFUEGBARKEITSZEITRAUM, MOVING WALL
+          ZUR 8. SIGNATUR
+          Indikator, Vorkommen und Unterfelder wie Feld 230
+
+238       AUFBEWAHRUNGS-/ VERFUEGBARKEITSZEITRAUM, MOVING WALL
+          ZUR 9. SIGNATUR
+          Indikator, Vorkommen und Unterfelder wie Feld 230
+
+239       AUFBEWAHRUNGS-/ VERFUEGBARKEITSZEITRAUM, MOVING WALL
+          ZUR 10. SIGNATUR
+          Indikator, Vorkommen und Unterfelder wie Feld 230
+
+
+655       ELEKTRONISCHE ADRESSE UND ZUGRIFFSART FUER EINE COMPUTERDATEI IM
+          FERNZUGRIFF
+          siehe MAB-TITEL
+
+
+671       ANDERSSCHRIFTLICHE DARSTELLUNG
+          siehe MAB-TITEL
+
+
+705       DDC (Dewey Decimal Classification) analytisch
+          siehe MAB-TITEL
+
+
+
+                               ==========
+                               MAB-ADRESS
+                               ==========
+
+
+670-675   SEGMENT ZUSAETZLICHE SUCHKRITERIEN
+
+671       ANDERSSCHRIFTLICHE DARSTELLUNG
+          siehe MAB-TITEL
+
+
+805       LIEFER- UND MELDERKENNUNGEN DER ZDB
+
+          Unterfelder:
+          $b    = Lieferkategorie Verbundsysteme (Replikationskennung)
+                  KEINE FESTLEGUNGEN MEHR ZUM INHALT DES UNTERFELDES
+          $c    = Liefersystem
+                  KEINE FESTLEGUNGEN MEHR ZUM INHALT DES UNTERFELDES
+
+
+806       ZUSAETZLICHE SIGELANGABEN
+
+          Unterfelder:
+          $f    = Zustaendiges Verbundsystem
