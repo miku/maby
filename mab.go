@@ -62,7 +62,7 @@ func (r *Reader) ReadRecord() (*Record, error) {
 	b, err := r.r.ReadBytes(GS)
 	if err == io.EOF {
 		if len(b) == 0 {
-			return nil, err
+			return nil, io.EOF
 		}
 		r.readerDone = true
 		return r.readRecord(b)
@@ -100,6 +100,7 @@ func (r *Reader) readRecord(p []byte) (record *Record, err error) {
 	record.Status = string(record.Leader[5])
 	record.Version = record.Leader[6:10]
 	record.Type = string(record.Leader[23])
+
 	if record.Length, err = strconv.Atoi(record.Leader[0:5]); err != nil {
 		return nil, err
 	}
@@ -120,6 +121,7 @@ func (r *Reader) readRecord(p []byte) (record *Record, err error) {
 		}
 		name := string(bytes.TrimSpace(part[0:FieldnameSize]))
 		for _, v := range bytes.Split(part[FieldnameSize:], []byte{US}) {
+			// TODO: move this into the generic read
 			if r.StripCollation {
 				v = bytes.Replace(v, []byte{0x88}, []byte{}, -1)
 				v = bytes.Replace(v, []byte{0x89}, []byte{}, -1)
@@ -143,8 +145,8 @@ func (r *Reader) readRecord(p []byte) (record *Record, err error) {
 						continue
 					}
 					s := struct {
-						Key   string `json:"k"`
-						Value string `json:"v"`
+						Key   string `json:"k,omitempty"`
+						Value string `json:"v,omitempty"`
 					}{
 						string(sub[0]),
 						sub[1:],
