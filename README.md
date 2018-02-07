@@ -1,7 +1,7 @@
 maby
 ====
 
-[MAB](http://www.dnb.de/DE/Standardisierung/Formate/MAB/mab_node.html) library for Go.
+[MAB](http://www.dnb.de/DE/Standardisierung/Formate/MAB/mab_node.html) library for Go. Experimental, **do not use for production**.
 
 Jsonify
 -------
